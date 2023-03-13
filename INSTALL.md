@@ -2,8 +2,8 @@
 
 ### 1. Создадим проект
 ```
-mkdir hello-react
-cd hello-react
+mkdir from-scratch
+cd from-scratch
 npm init
 ```
 
@@ -105,6 +105,7 @@ root.render(<App />);
 ```
 
 ### 6. Запустим приложение
+
 
 ## Установка пакетов тестирования
 ```
