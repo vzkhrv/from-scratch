@@ -124,12 +124,20 @@ module.exports = {
   testEnvironment: "jsdom",
   transformIgnorePatterns: ["node_modules"],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  moduleNameMapper: {
+    '\\.(css|less)$': '<rootDir>/spec/__mocks__/styleMock.js',
+  }
 };
 ```
 
 #### jest.setup.js
 ```js
 import '@testing-library/jest-dom';
+```
+
+#### spec/__mocks__/styleMock.js
+```js
+module.exports = {};
 ```
 
 ### 2. Добавим ESLint
