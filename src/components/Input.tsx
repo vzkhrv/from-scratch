@@ -1,14 +1,15 @@
 import { ChangeEvent, useState } from "react";
 
-import './style.css';
+import './styles.css';
 
 type Props = {
-    value: string,
+    defaultValue: string,
     onChange: (value: string) => void;
 }
 
-export const Input = ({ value, onChange }: Props) => {
+export const Input = ({ defaultValue, onChange }: Props) => {
   const [labelValue, setlabelValue] = useState("");
+  const [inputValue, setinputValue] = useState(defaultValue);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const val = event.target.value;
@@ -17,7 +18,8 @@ export const Input = ({ value, onChange }: Props) => {
         setlabelValue(`Превышена максимальная длина заголовка ${val.length}`);
     } else {
         setlabelValue("");
-        onChange(`${val}`);
+        setinputValue(val);
+        onChange(val);
     }
   }
 
@@ -27,12 +29,12 @@ export const Input = ({ value, onChange }: Props) => {
           htmlFor="input-header-field-id"
           data-testid="input-label"
         >
-          Введите заголовок
+          Заголовок задачи
         </label>
         <input
           id="input-header-field-id"
           type="text"
-          value={value}
+          value={inputValue}
           onChange={handleChange}
           placeholder={`например, введите "купить молоко"`}
           alt="поле для ввода заголовка задачи"

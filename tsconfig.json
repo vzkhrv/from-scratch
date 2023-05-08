@@ -8,8 +8,9 @@
       "lib": ["dom", "esnext"],
       "strict": true,
       "sourceMap": true,
-      "target": "esnext"
+      "target": "esnext",
+      "outDir": "build"
     },
     "include": ["src", "spec"],
-    "exclude": ["node_modules", "coverage"]
+    "exclude": ["node_modules", "coverage", "build"]
   }
