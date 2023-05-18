@@ -24,7 +24,7 @@ export const Input = ({ defaultValue, onChange }: Props) => {
   }
 
   return (
-    <div className="input-field">
+    <div className="input-field" data-testid="input-container">
         <label
           htmlFor="input-header-field-id"
           data-testid="input-label"
@@ -34,12 +34,14 @@ export const Input = ({ defaultValue, onChange }: Props) => {
         <input
           id="input-header-field-id"
           type="text"
+          className="input-field-element input-field-node"
           value={inputValue}
           onChange={handleChange}
           placeholder={`например, введите "купить молоко"`}
           alt="поле для ввода заголовка задачи"
           title="поле для заголовка"
           data-testid="input-field"
+          style={{ display: 'flex' }}
         />
         <span data-testid="input-hint-text">{labelValue}</span>
     </div>

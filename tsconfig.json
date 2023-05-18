@@ -11,6 +11,6 @@
       "target": "esnext",
       "outDir": "build"
     },
-    "include": ["src", "spec"],
+    "include": ["src", "spec", "jest.d.ts"],
     "exclude": ["node_modules", "coverage", "build"]
   }
