@@ -9,7 +9,10 @@
       "strict": true,
       "sourceMap": true,
       "target": "esnext",
-      "outDir": "build"
+      "outDir": "build",
+      "paths": {
+        "src/*": ["./src/*"]
+      }
     },
     "include": ["src", "spec", "jest.d.ts"],
     "exclude": ["node_modules", "coverage", "build"]

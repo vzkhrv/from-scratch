@@ -7,5 +7,5 @@ describe('Список задач', () => {
             { label: 'Купить молока', done: false },
             { label: 'Выгулять собаку', done: false },
         ]).toContainEqual(expect.not.toHaveDoneItem());
-    })
+    });
 });
