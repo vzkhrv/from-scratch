@@ -1,6 +1,7 @@
 import { ChangeEvent, useState } from "react";
 
 import './styles.css';
+import { headerFieldOptions, validateHeader } from "src/utils/helpers";
 
 type Props = {
     defaultValue: string,
@@ -14,12 +15,12 @@ export const Input = ({ defaultValue, onChange }: Props) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const val = event.target.value;
 
-    if (val.length > 32) {
-        setlabelValue(`Превышена максимальная длина заголовка ${val.length}`);
+    if (validateHeader(val)) {
+      setlabelValue("");
+      setinputValue(val);
+      onChange(val);
     } else {
-        setlabelValue("");
-        setinputValue(val);
-        onChange(val);
+      setlabelValue(headerFieldOptions.message);
     }
   }
 

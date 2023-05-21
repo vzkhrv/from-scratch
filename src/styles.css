@@ -8,4 +8,7 @@
     flex-flow: column nowrap;
     gap: 12px;
     align-items: flex-start;
+
+    width: 200px;
+    overflow: hidden;
 }
