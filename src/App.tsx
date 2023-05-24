@@ -3,7 +3,6 @@ import { Input } from "./components/Input"
 import { AddButton } from "./components/AddButton";
 import { Notifier } from "./components/Notifier";
 
-
 import './styles.css'
 
 export const App = () => {
