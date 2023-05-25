@@ -1,8 +1,7 @@
-import { ChangeEvent, useMemo, useState } from "react";
+import { ChangeEvent, useMemo } from "react";
 
 import "./styles.css";
 import { headerFieldOptions, validateHeaderMax } from "src/utils/helpers";
-import { AddButton } from "./AddButton";
 
 type Props = {
   value: string;
