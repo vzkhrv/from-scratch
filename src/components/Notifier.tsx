@@ -26,7 +26,7 @@ export const Notifier = ({ task, open, onClose }: Props) => {
     return(
         <div className="blackout">
             <div className="notifier-wrapper">
-                {`Задача ${task} выполнена`}
+                {task}
             </div>
         </div>
     );

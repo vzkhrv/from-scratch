@@ -1,10 +1,17 @@
+import TrashIcon from "../icons/trash.png";
+
 type Props = {
-    onClick: () => void;
-}
-export const DeleteButton = ({ onClick }: Props) => {
+  onClick: () => void;
+  disabled: boolean;
+};
+export const DeleteButton = ({ onClick, disabled }: Props) => {
   return (
-    <button className="button" onClick={onClick}>
-      <img src="../icons/trash.png" alt="Удалить" />
+    <button
+      className="button button-with-icon"
+      onClick={onClick}
+      disabled={disabled}
+    >
+      <img src={TrashIcon} alt="Удалить" />
     </button>
-  )
-}
+  );
+};
