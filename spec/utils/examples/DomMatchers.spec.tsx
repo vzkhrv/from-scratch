@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Input } from '../../src/components/Input';
+import { Input } from 'src/components/Input';
 
 it('Работаем с dom', () => {
     const fn = jest.fn();

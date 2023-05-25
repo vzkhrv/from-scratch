@@ -9,24 +9,20 @@ describe('Поле ввода', () => {
 
     it('Поле доступно для ввода', async () => {
         const fn = jest.fn();
-        render(<Input value="Hi!" onChange={fn} />);
+        render(<Input value="" onChange={fn} />);
 
         const inputEl = screen.getByRole('textbox');
-        await userEvent.clear(inputEl);
         await userEvent.type(inputEl, 'Пример заголовка задачи');
 
-        expect(inputEl).toHaveValue('Пример заголовка задачи');
+        expect(fn).toBeCalledTimes(23);
     });
 
     it('Ограничение на ввод более 32 символов', async () => {
         const fn = jest.fn();
-        render(<Input value="Hi!" onChange={fn} />);
+        render(<Input value="Пример заголовка, содержащего больше 32 символов" onChange={fn} />);
 
         const hintEl = screen.getByTestId('input-hint-text');
-        const inputEl = screen.getByRole('textbox');
-        await userEvent.clear(inputEl);
-        await userEvent.type(inputEl, 'Пример заголовка');
 
-        expect(hintEl.innerHTML).toBe('');
+        expect(hintEl.innerHTML).not.toBe('');
     });
 });

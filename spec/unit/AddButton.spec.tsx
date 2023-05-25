@@ -1,4 +1,4 @@
-import { AddButton } from '../src/components/AddButton';
+import { AddButton } from 'src/components/AddButton';
 import { render, screen } from '@testing-library/react';
 
 describe('Кнопка "Добавить"', () => {
