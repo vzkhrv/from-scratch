@@ -3,7 +3,7 @@ import { Input } from '../../src/components/Input';
 
 it('Работаем с dom', () => {
     const fn = jest.fn();
-    const view = render(<Input defaultValue="Hi!" onChange={fn} />);
+    const view = render(<Input value="Hi!" onChange={fn} />);
 
     const containerEl = screen.getByTestId('input-container');
     const inputEl = screen.getByRole('textbox');

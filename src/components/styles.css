@@ -1,20 +1,41 @@
-.input-field {
+.input-field-wrapper {
     display: flex;
     flex-flow: column nowrap;
-
+    font-size: 8px;
+    font-style: italic;
     width: 100%;
+    gap: 4px;
 }
 
-.input-field label {
+.input-field-label {
     font-size: 10px;
-    color: gray;
+    color: white;
     margin-bottom: 4px;
 }
 
-.input-field input::placeholder {
+.input-field-input {
+    font-size: 12px;
+    height: 16px;
+    color: white;
+    background-color: #343A40;
+    border: 1px solid #363b42;
+    border-radius: 4px;
+    padding: 4px;
+    outline: none;
+}
+
+.input-field-input:focus {
+    border: 1px solid #575f6a;
+}
+
+.input-field-input::placeholder {
     font-size: 10px;
     color: gray;
     font-style: italic;
+}
+
+.input-field-hint {
+    color: #c4d0e189;
 }
 
 .blackout {
@@ -46,4 +67,43 @@
     border-radius: 16px;
 
     z-index: 1001;
+}
+
+.button {
+    height: 16px;
+    
+    color: white;
+    background-color: #484F59;
+    border: 1px solid #363b42;
+    border-radius: 4px;
+
+    outline: none;
+}
+
+.button:active:not(:disabled) {
+    background-color: #505863;
+    box-shadow: inset 0 0 5px #272b31;
+}
+
+.button > img {
+    object-fit: contain;
+    width: 150%;
+    height: 150%;
+    pointer-events: none;
+}
+
+.button-with-text {
+    padding: 6px 12px;
+}
+
+.button-with-icon {
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-with-icon:disabled {
+    opacity: 0.5;
 }

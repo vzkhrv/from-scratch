@@ -3,10 +3,13 @@ import { Input } from "./components/Input"
 import { AddButton } from "./components/AddButton";
 import { Notifier } from "./components/Notifier";
 
+import { store } from './store/configureStore'
+import { Provider } from 'react-redux'
+
 import './styles.css'
+import { NewTaskBar } from "./modules/NewTaskBar";
 
 export const App = () => {
-  const [inputValue, setinputValue] = useState("");
   const [notifierOpen, setNotifierOpen] = useState(false);
   
 
@@ -20,17 +23,16 @@ export const App = () => {
 
   return (
     <div className="root-container">
-      <Notifier
+      {/* <Notifier
         open={notifierOpen}
         task="Любая задача"
         onClose={handleNotifierClose}
       />
-      <Input
-        defaultValue={inputValue}
-        onChange={(val) => setinputValue(val)}
-      />
-      <AddButton onClick={handleAddButtonClick} />
-      <button onClick={() => setNotifierOpen(true)}>Показать нотификацию</button>
+       */}
+    <Provider store={store}>
+      <h3>Список задач</h3>
+      <NewTaskBar />
+    </Provider>
     </div>
   )
 }

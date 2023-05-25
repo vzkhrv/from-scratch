@@ -2,13 +2,24 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+html, body {
+    margin: 0;
+}
+
 .root-container {
-    padding: 12px;
+    color: white;
+    padding: 24px;
     display: flex;
     flex-flow: column nowrap;
     gap: 12px;
     align-items: flex-start;
 
-    width: 200px;
+    min-height: 400px;
     overflow: hidden;
+
+    background-color: #3C424A;
+}
+
+h3 {
+    margin: 0 auto;
 }

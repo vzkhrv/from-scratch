@@ -1,50 +1,42 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useMemo, useState } from "react";
 
-import './styles.css';
-import { headerFieldOptions, validateHeader } from "src/utils/helpers";
+import "./styles.css";
+import { headerFieldOptions, validateHeaderMax } from "src/utils/helpers";
+import { AddButton } from "./AddButton";
 
 type Props = {
-    defaultValue: string,
-    onChange: (value: string) => void;
-}
+  value: string;
+  onChange: (value: string) => void;
+};
 
-export const Input = ({ defaultValue, onChange }: Props) => {
-  const [labelValue, setlabelValue] = useState("");
-  const [inputValue, setinputValue] = useState(defaultValue);
-
+export const Input = ({ value, onChange }: Props) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const val = event.target.value;
 
-    if (validateHeader(val)) {
-      setlabelValue("");
-      setinputValue(val);
-      onChange(val);
-    } else {
-      setlabelValue(headerFieldOptions.message);
-    }
-  }
+    onChange(val);
+  };
+
+  const hintValue = useMemo(() => (
+    validateHeaderMax(value) ? "" : headerFieldOptions.message
+  ), [value]);
 
   return (
-    <div className="input-field" data-testid="input-container">
-        <label
-          htmlFor="input-header-field-id"
-          data-testid="input-label"
-        >
-          Заголовок задачи
-        </label>
-        <input
-          id="input-header-field-id"
-          type="text"
-          className="input-field-element input-field-node"
-          value={inputValue}
-          onChange={handleChange}
-          placeholder={`например, введите "купить молоко"`}
-          alt="поле для ввода заголовка задачи"
-          title="поле для заголовка"
-          data-testid="input-field"
-          style={{ display: 'flex' }}
-        />
-        <span data-testid="input-hint-text">{labelValue}</span>
+    <div className="input-field-wrapper" data-testid="input-container">
+      <input
+        id="input-header-field-id"
+        type="text"
+        className="input-field-element input-field-node input-field-input"
+        value={value}
+        onChange={handleChange}
+        placeholder={`например, введите "купить молоко"`}
+        alt="поле для ввода заголовка задачи"
+        title="поле для заголовка"
+        data-testid="input-field"
+        style={{ display: "flex" }}
+      />
+      <span data-testid="input-hint-text" className="input-field-hint">
+        {hintValue}
+      </span>
     </div>
-  )
-}
+  );
+};

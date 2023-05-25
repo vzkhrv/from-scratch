@@ -1,8 +1,17 @@
+import AddIcon from "../icons/add.png";
+
 type Props = {
-    onClick: () => void;
-}
-export const AddButton = ({ onClick }: Props) => {
+  onClick: () => void;
+  disabled: boolean;
+};
+export const AddButton = ({ onClick, disabled }: Props) => {
   return (
-    <button onClick={onClick}>Добавить</button>
-  )
-}
+    <button
+      className="button button-with-icon"
+      onClick={onClick}
+      disabled={disabled}
+    >
+      <img src={AddIcon} alt="Добавить" />
+    </button>
+  );
+};
