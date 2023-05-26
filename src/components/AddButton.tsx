@@ -10,6 +10,7 @@ export const AddButton = ({ onClick, disabled }: Props) => {
       className="button button-with-icon"
       onClick={onClick}
       disabled={disabled}
+      data-alt="добавить задачу"
     >
       <img src={AddIcon} alt="Добавить" />
     </button>

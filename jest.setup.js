@@ -13,3 +13,22 @@ jest.mock('src/utils/helpers', () => ({
 }));
 
 jest.useFakeTimers();
+
+const cryptoMock = {
+    randomUUID: jest.fn(() => Math.random())
+}
+
+Object.defineProperty(window, 'crypto', {
+    value: cryptoMock,
+    writable: true,
+})
+
+const lSMock = {
+    getItem: jest.fn().mockReturnValue(null),
+    setItem: jest.fn(),
+}
+
+Object.defineProperty(window, 'localStorage', {
+    value: lSMock,
+    writable: true,
+})
