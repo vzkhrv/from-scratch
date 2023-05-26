@@ -17,23 +17,23 @@ jest.mock('src/utils/helpers', () => ({
 
 jest.useFakeTimers();
 
-const cryptoMock = {
-    randomUUID: jest.fn(() => Math.random().toString()),
-}
+// const cryptoMock = {
+//     randomUUID: jest.fn(() => Math.random().toString()),
+// }
 
-Object.defineProperty(window, 'crypto', {
-    value: cryptoMock,
-    writable: true,
-})
+// Object.defineProperty(window, 'crypto', {
+//     value: cryptoMock,
+//     writable: true,
+// })
 
-const storage = {};
+// const storage = {};
 
-const lSMock = {
-    getItem: jest.fn((key) => storage[key] || null),
-    setItem: jest.fn((key, val) => { storage[key] = val; }),
-}
+// const lSMock = {
+//     getItem: jest.fn((key) => storage[key] || null),
+//     setItem: jest.fn((key, val) => { storage[key] = val; }),
+// }
 
-Object.defineProperty(window, 'localStorage', {
-    value: lSMock,
-    writable: true,
-})
+// Object.defineProperty(window, 'localStorage', {
+//     value: lSMock,
+//     writable: true,
+// })
