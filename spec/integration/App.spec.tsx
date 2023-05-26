@@ -1,6 +1,6 @@
 import { App } from "src/App";
-import ue from "@testing-library/user-event";
 import { render, screen } from "@testing-library/react";
+import ue from "@testing-library/user-event";
 
 const userEvent = ue.setup({
   advanceTimers: jest.advanceTimersByTime,

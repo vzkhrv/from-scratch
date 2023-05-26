@@ -2,9 +2,12 @@ import '@testing-library/jest-dom';
 import { toBeShorterThan } from './spec/utils/custom-matchers/toBeShorterThan';
 import { toHaveDoneItem } from './spec/utils/custom-matchers/toHaveDoneItem';
 
+import { toMatchDiffSnapshot } from 'snapshot-diff';
+
 expect.extend({
     toBeShorterThan,
-    toHaveDoneItem
+    toHaveDoneItem,
+    toMatchDiffSnapshot
 });
 
 jest.mock('src/utils/helpers', () => ({
