@@ -8,12 +8,12 @@ it("отображение списка задач", () => {
   const items: Task[] = [
     {
       id: "1",
-      header: "купить хлеба",
+      header: "купить хлеб",
       done: false,
     },
     {
       id: "2",
-      header: "купить молока",
+      header: "купить молоко",
       done: false,
     },
     {
@@ -34,4 +34,8 @@ it("отображение списка задач", () => {
   const secondRender = asFragment();
 
   expect(firstRender).toMatchDiffSnapshot(secondRender);
+});
+
+it("Список содержит не больше 10 невыполненных задач", () => {
+
 });
