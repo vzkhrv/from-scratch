@@ -8,7 +8,9 @@
     "build": "NODE_ENV=production webpack",
     "test": "jest",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
+    "prebuild:storybook": "npm run test:generate-output"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +20,7 @@
     "@babel/preset-typescript": "^7.22.5",
     "@storybook/addon-essentials": "^7.0.23",
     "@storybook/addon-interactions": "^7.0.23",
+    "@storybook/addon-jest": "^7.0.23",
     "@storybook/addon-links": "^7.0.23",
     "@storybook/blocks": "^7.0.23",
     "@storybook/react": "^7.0.23",

@@ -1,8 +1,19 @@
 import { Item } from "./Item";
 
 type Props = {
+  /**
+   * Элементы списка
+   */
   items: Task[];
+
+  /**
+   * Колбэк для удаления задачи
+   */
   onDelete: (id: Task["id"]) => void;
+
+  /**
+   * Колбэк для выполнения задачи
+   */
   onToggle: (id: Task["id"]) => void;
 };
 
